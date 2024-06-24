@@ -1,0 +1,82 @@
+batch_size: 16
+iters: 100000
+
+train_dataset:
+  type: Dataset
+  dataset_root: ./dataset/CrackSeg9k
+  train_path: ./dataset/CrackSeg9k/train.txt
+  # dataset_root: ./dataset/Ozgenel
+  # train_path: ./dataset/Ozgenel/train.txt
+  # train_path: ./dataset/EarthquakeCrackDataset/train.txt
+  num_classes: 2
+  mode: train 
+  transforms:
+    - type: ResizeStepScaling
+      min_scale_factor: 0.5
+      max_scale_factor: 2.0
+      scale_step_size: 0.25
+    - type: RandomPaddingCrop
+      label_padding_value: 0
+      crop_size: [448, 448]
+      category_max_ratio: 1.0
+    - type: RandomHorizontalFlip
+    - type: RandomDistort
+      brightness_range: 0.5
+      contrast_range: 0.5
+      saturation_range: 0.5
+    - type: Normalize
+
+val_dataset:
+  type: Dataset
+  dataset_root: ./dataset/CrackSeg9k
+  val_path: ./dataset/CrackSeg9k/test.txt
+
+  # dataset_root: /home/lab1111/dataset/Ozgenel
+  # val_path: /home/lab1111/dataset/Ozgenel/test.txt
+  # dataset_root: ./dataset/EarthquakeCrackDataset
+  # val_path: ./dataset/EarthquakeCrackDataset/val.txt
+  num_classes: 2
+  mode: val
+  transforms:
+    - type: Normalize
+
+
+model:
+  type: CrackNet_seg_tiny
+  num_classes: 2
+
+
+
+
+loss:
+  types:
+    - type: CrossEntropyLoss
+    - type: CrossEntropyLoss
+    - type: CrossEntropyLoss
+    - type: CrossEntropyLoss
+  coef: [1,0.5,0.5,0.5]
+
+
+
+optimizer:
+  type: AdamW
+  beta1: 0.9
+  beta2: 0.999
+  weight_decay: 0.01
+
+
+lr_scheduler:
+  type: PolynomialDecay
+  learning_rate: 0.005
+  end_lr: 0.0
+  power: 0.9
+  warmup_iters: 2000
+  warmup_start_lr: 1.0e-5
+
+  
+
+
+
+  
+
+  
