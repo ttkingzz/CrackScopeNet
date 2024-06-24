@@ -13,9 +13,12 @@ Timely detection of cracks is a critical task in structural health monitoring. H
 
 # Datasets
 [CrackSeg9k](https://github.com/Dhananjay42/crackseg9k)
+
 [Ozgenel](https://data.mendeley.com/datasets/jwsn7tfbrp/1)
+
 [Aerial Track Dataset](https://github.com/zhhongsh/UAV-Benchmark-Dataset-for-Highway-Crack-Segmentation)
 
-We train the model on a comprehensive dataset (CrackSeg9k) and subsequently transfer to specific downstream scenarios, asphalt (Asphalt3k) and concrete (Concrete3k).
+We train the model on a comprehensive dataset (CrackSeg9k) and subsequently transfer to specific downstream scenarios, concrete crack (Ozgenel) and earthquake crack(Aerial Track Dataset).
 
-Installation
+# More
+More details will be available after the article is accepted.
