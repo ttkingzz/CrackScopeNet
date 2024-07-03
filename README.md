@@ -1,12 +1,13 @@
 # CrackScopeNet
 
-CrackScopeNet: An Efficient Crack Segmentation for Resource-Constrained Structural Health Monitoring
+CrackScopeNet: A Lightweight and Efficient Neural Network for UAV-based Crack Detection
 
 </hr>
 
 # Abstract
 
-Timely detection of cracks is a critical task in structural health monitoring. However, current neural network models often require substantial computational resources and intricate designs, which limits their practicality in time-sensitive, resource-constrained outdoor environments. To bridge this gap, we introduce CrackScopeNet, a lightweight segmentation network model designed based on common crack morphology. This model is suitable for deployment on devices with limited computational power and memory, such as drones, mobile robots, and edge devices. CrackScopeNet features a lightweight multi-scale feature extraction module to capture local contextual information of cracks and a stripe-wise context attention mechanism to obtain long-distance dependencies, mitigating the effects of poor lighting, shadows, and obstructions. We evaluate the model on the composite dataset CrackSeg9k, demonstrating its remarkable efficiency and outstanding performance. The model achieves superior mean intersection over union (mIoU) scores compared to state-of-the-art models while maintaining low parameters and computational overhead. Furthermore, CrackScopeNet shows ideal inference speed on edge devices with severe computational and memory constraints without GPU support. CrackScopeNet contributes to the development of efficient and effective crack segmentation networks for practical structural health monitoring applications in resource-limited environments.
+Detecting cracks in structural health monitoring is crucial for ensuring infrastructure safety and longevity. The complexity of crack patterns and limited computational resources in practical applications present significant challenges. To bridge this gap, we introduce CrackScopeNet, a lightweight segmentation network model that simultaneously considers local and global crack features, suitable for deployment on UAV-based platforms with limited computational power and memory. CrackScopeNet features a multi-scale branch to improve sensitivity to cracks of varying sizes without substantial computational overhead and a stripe-wise context attention mechanism to enhance the capture of long-range contextual information, mitigating the interference from complex backgrounds. Experimental results on CrackSeg9k dataset demonstrate that CrackScopeNet leads to a significant improvement in prediction performance, with the highest mean intersection over union (mIoU) scores reaching 82.12\%, while maintaining a lightweight architecture with only 1.05M parameters and 1.58G floating point operations (FLOPs). Besides, CrackScopeNet excels in inference speed on edge devices with limited resources because of its low FLOPs. CrackScopeNet contributes to the development of efficient and effective crack segmentation networks, suitable for practical structural health monitoring applications in resource-limited UAV-based platforms.
+
 
 # Model Architecture
 
